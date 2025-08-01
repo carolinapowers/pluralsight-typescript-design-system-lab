@@ -18,16 +18,12 @@ import { Typography } from '../tokens/typography'
 import { TEXT_STYLES } from '../tokens/typography'
 import { Shadows } from '../tokens/shadows'
 import { COMPONENT_SHADOWS } from '../tokens/shadows'
-import { formatCurrency } from '../utils/formatters'
-import { formatDate } from '../utils/formatters'
-import { formatNumber } from '../utils/formatters'
-import { isValidEmail } from '../utils/validators'
-import { isValidPassword } from '../utils/validators'
-import { isRequired } from '../utils/validators'
-import { getThemeColors } from '../utils/theme'
-import { applyTheme } from '../utils/theme'
-import { breakpoints } from '../utils/responsive'
-import { useBreakpoint } from '../utils/responsive'
+// ✅ STEP 2: First barrel file - utils consolidated!
+import { 
+  formatCurrency, formatDate, formatNumber,
+  isValidEmail, isValidPassword, isRequired,
+  getThemeColors, applyTheme, breakpoints, useBreakpoint
+} from '../utils'
 
 // This is what we want to avoid! 
 // 25+ import statements for a single component file
@@ -107,9 +103,9 @@ export const App: React.FC = () => {
   return (
     <div style={appStyles}>
       <header style={headerStyles}>
-        <h1 style={titleStyles}>🚨 Step 1: Import Chaos</h1>
+        <h1 style={titleStyles}>🌟 Step 2: First Barrel Relief</h1>
         <p style={subtitleStyles}>
-          Look at all those import statements above! This is the problem we're solving.
+          Notice how the utils imports are now consolidated! 10 imports become 1.
         </p>
         <div style={flexGroupStyles}>
           <Badge variant="primary">TypeScript</Badge>
