@@ -1,39 +1,73 @@
-// STEP 4: Main Barrel - The Ultimate Simplification
-// This is where the magic happens! One import to rule them all.
+// STEP 5: Production-Optimized Barrel
 
-// Re-export everything from our module barrels
-export * from './components'
-export * from './tokens'  
-export * from './utils'
-export type * from './types'
+// 🎯 Type-only exports (zero runtime overhead)
+export type { 
+  ButtonProps, 
+  InputProps, 
+  CardProps, 
+  ModalProps, 
+  BadgeProps,
+  BaseComponentProps,
+  ComponentSize,
+  ComponentVariant,
+} from './types/component'
 
-// Alternative explicit approach (more control):
-/*
-// Components
-export { Button, Input, Card, Modal, Badge } from './components'
+export type {
+  ThemeMode,
+  ThemeContextValue,
+  ResponsiveBreakpoints,
+  MediaQueries,
+} from './types/theme'
 
-// Tokens  
-export { Colors, Spacing, Typography, Shadows } from './tokens'
+// 🎯 Selective runtime exports (optimal tree-shaking)
+export { Button } from './components/Button/Button'
+export { Input } from './components/Input/Input'
+export { Card } from './components/Card/Card'
+export { Modal } from './components/Modal/Modal'
+export { Badge } from './components/Badge/Badge'
 
-// Utils
-export { formatCurrency, formatDate, isValidEmail } from './utils'
+// Design token exports
+export { Colors, BRAND_COLORS } from './tokens/colors'
+export { Spacing, COMPONENT_SPACING } from './tokens/spacing'
+export { Typography, TEXT_STYLES } from './tokens/typography'
+export { Shadows, COMPONENT_SHADOWS } from './tokens/shadows'
 
-// Types
-export type { ButtonProps, InputProps, ThemeMode } from './types'
-*/
+// Utility exports
+export { 
+  formatCurrency, 
+  formatDate, 
+  formatNumber, 
+  formatBytes, 
+  truncateText 
+} from './utils/formatters'
 
-// Now our App component can import everything from one place:
-// import { Button, Input, Card, Colors, formatCurrency, isValidEmail } from './design-system'
+export { 
+  isValidEmail, 
+  isValidPassword, 
+  isValidUrl, 
+  isValidPhoneNumber, 
+  isRequired, 
+  minLength, 
+  maxLength 
+} from './utils/validators'
 
-// 🎉 TRANSFORMATION COMPLETE!
-// 
-// Before (Step 1): 25+ import statements per file
-// After (Step 4):  1-2 import statements per file
-// 
-// Benefits achieved:
-// ✅ 90% reduction in import complexity
-// ✅ Single source of truth for all exports
-// ✅ Easy refactoring and reorganization  
-// ✅ Better developer experience
-// ✅ Cleaner, more maintainable code
-// ✅ Easier onboarding for new team members
+export { 
+  getThemeColors, 
+  createThemeVariables, 
+  applyTheme 
+} from './utils/theme'
+
+export { 
+  breakpoints, 
+  mediaQueries, 
+  useBreakpoint 
+} from './utils/responsive'
+
+// 🎯 Namespace exports (organized access)
+export * as Tokens from './tokens'
+export * as Components from './components'
+export * as Utils from './utils'
+export * as Types from './types'
+
+// 🎯 Backward compatibility (smooth migration)
+export * as DesignSystem from './index'

@@ -87,9 +87,9 @@ export const App: React.FC = () => {
   return (
     <div style={appStyles}>
       <header style={headerStyles}>
-        <h1 style={titleStyles}>🎯 Step 4: Ultimate Simplification</h1>
+        <h1 style={titleStyles}>⚡ Step 5: Production Optimization</h1>
         <p style={subtitleStyles}>
-          ONE IMPORT! Everything from the design system in a single clean import.
+          Enterprise-grade barrel with type-only exports and optimal tree-shaking!
         </p>
         <div style={flexGroupStyles}>
           <Badge variant="primary">TypeScript</Badge>
