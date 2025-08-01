@@ -60,7 +60,7 @@ export const Card: React.FC<CardProps> = ({
   const footerStyles: React.CSSProperties = {
     padding: getPaddingSize(),
     borderTop: `1px solid ${Colors.neutral[200]}`,
-    backgroundColor: Colors.neutral[25] || Colors.neutral[50],
+    backgroundColor: Colors.neutral[50],
   }
 
   return (
