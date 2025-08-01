@@ -1,23 +1,8 @@
 import React, { useState } from 'react'
-// STEP 1: MESSY IMPORTS - The Problem We're Solving
-import { Button } from '../components/Button/Button'
-import { ButtonProps } from '../types/component'
-import { Input } from '../components/Input/Input'
-import { InputProps } from '../types/component'
-import { Card } from '../components/Card/Card'
-import { CardProps } from '../types/component'
-import { Modal } from '../components/Modal/Modal'
-import { ModalProps } from '../types/component'
-import { Badge } from '../components/Badge/Badge'
-import { BadgeProps } from '../types/component'
-import { Colors } from '../tokens/colors'
-import { BRAND_COLORS } from '../tokens/colors'
-import { Spacing } from '../tokens/spacing'
-import { COMPONENT_SPACING } from '../tokens/spacing'
-import { Typography } from '../tokens/typography'
-import { TEXT_STYLES } from '../tokens/typography'
-import { Shadows } from '../tokens/shadows'
-import { COMPONENT_SHADOWS } from '../tokens/shadows'
+// ✅ STEP 3: Module barrels - major progress!
+import { Button, Input, Card, Modal, Badge } from '../components'
+import { Colors, BRAND_COLORS, Spacing, COMPONENT_SPACING, Typography, TEXT_STYLES, Shadows, COMPONENT_SHADOWS } from '../tokens'
+import type { ButtonProps, InputProps, CardProps, ModalProps, BadgeProps } from '../types'
 // ✅ STEP 2: First barrel file - utils consolidated!
 import { 
   formatCurrency, formatDate, formatNumber,
@@ -103,9 +88,9 @@ export const App: React.FC = () => {
   return (
     <div style={appStyles}>
       <header style={headerStyles}>
-        <h1 style={titleStyles}>🌟 Step 2: First Barrel Relief</h1>
+        <h1 style={titleStyles}>🚀 Step 3: Scaling Barrels</h1>
         <p style={subtitleStyles}>
-          Notice how the utils imports are now consolidated! 10 imports become 1.
+          Now we have barrels for components, tokens, types, and utils! Only 4 clean imports.
         </p>
         <div style={flexGroupStyles}>
           <Badge variant="primary">TypeScript</Badge>
