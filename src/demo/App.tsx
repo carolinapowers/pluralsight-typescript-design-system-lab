@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-// ✅ STEP 3: Module barrels - major progress!
-import { Button, Input, Card, Modal, Badge } from '../components'
-import { Colors, BRAND_COLORS, Spacing, COMPONENT_SPACING, Typography, TEXT_STYLES, Shadows, COMPONENT_SHADOWS } from '../tokens'
-import type { ButtonProps, InputProps, CardProps, ModalProps, BadgeProps } from '../types'
-// ✅ STEP 2: First barrel file - utils consolidated!
+// 🎯 STEP 4: ULTIMATE MAIN BARREL - One import to rule them all!
 import { 
+  Button, Input, Card, Modal, Badge,
+  Colors, BRAND_COLORS, Spacing, COMPONENT_SPACING, Typography, TEXT_STYLES, Shadows, COMPONENT_SHADOWS,
   formatCurrency, formatDate, formatNumber,
   isValidEmail, isValidPassword, isRequired,
   getThemeColors, applyTheme, breakpoints, useBreakpoint
-} from '../utils'
+} from '../index'
+import type { ButtonProps, InputProps, CardProps, ModalProps, BadgeProps } from '../index'
 
 // This is what we want to avoid! 
 // 25+ import statements for a single component file
@@ -88,9 +87,9 @@ export const App: React.FC = () => {
   return (
     <div style={appStyles}>
       <header style={headerStyles}>
-        <h1 style={titleStyles}>🚀 Step 3: Scaling Barrels</h1>
+        <h1 style={titleStyles}>🎯 Step 4: Ultimate Simplification</h1>
         <p style={subtitleStyles}>
-          Now we have barrels for components, tokens, types, and utils! Only 4 clean imports.
+          ONE IMPORT! Everything from the design system in a single clean import.
         </p>
         <div style={flexGroupStyles}>
           <Badge variant="primary">TypeScript</Badge>
