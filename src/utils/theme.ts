@@ -14,7 +14,7 @@ export const getThemeColors = (mode: ThemeMode) => {
       }
     : {
         background: Colors.neutral[50],
-        surface: Colors.neutral[0] || '#ffffff',
+        surface: '#ffffff',
         text: {
           primary: Colors.neutral[900],
           secondary: Colors.neutral[600],
